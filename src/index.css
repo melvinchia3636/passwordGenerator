@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Fredoka', sans-serif;
+}
+
+.rc-slider * {
+  background-color: white;
+  border-color: white;
+  box-shadow: white !important
+}
+
+.rc-slider-handle {
+  opacity: 1
+}
+
+.rc-slider-handle:hover {
+  border-color: white
+}
+
+.rc-slider-handle:focus {
+  box-shadow: none;
+}
+
+.rc-slider-handle-dragging {
+  border-color: white !important;
+  box-shadow: 0 0 0 5px white !important
+}
