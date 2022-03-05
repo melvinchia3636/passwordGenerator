@@ -1,6 +1,8 @@
 import { Icon } from '@iconify/react'
 import React, { useEffect, useState } from 'react'
 import Slider from 'rc-slider'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 function App() {
   const [password, setPassword] = useState<string>("redaxe")
@@ -36,8 +38,12 @@ function App() {
     <div className="App bg-slate-800 w-full h-screen flex flex-col text-slate-100 items-center justify-center">
       <h1 className="text-4xl text-center mb-2 px-4 uppercase tracking-[0.325em]">Password Generator</h1>
       <p className="mb-12 text-lg text-center px-4 tracking-[0.15em]">I should've done this a long time ago lol</p>
-      <div className="w-[calc(100vw-4rem)] md:w-1/2 p-4 whitespace-nowrap pl-6 pt-[0.8rem] text-slate-100 border-b-2 text-2xl tracking-wide flex items-center justify-between">
-        <span className="overflow-x-auto overflow-y-hidden mr-6">{password}</span>
+      <div className="max-w-[calc(100vw-8rem)] p-4 whitespace-nowrap pl-6 pt-[0.8rem] text-slate-100 border-b-2 text-2xl tracking-wide flex items-center justify-between">
+        <div className="mr-6 flex min-w-0">
+          <PerfectScrollbar>
+            {password}
+          </PerfectScrollbar>
+        </div>
         <div className="h-full flex items-center justify-center mt-0.5 gap-4">
           <button onClick={copy}>
             <Icon icon="eva:copy-outline" className="w-6 h-6" />

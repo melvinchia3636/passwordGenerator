@@ -1,7 +1,7 @@
 {
   "name": "password",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -10,10 +10,14 @@
   "dependencies": {
     "@iconify/react": "^3.1.4",
     "autoprefixer": "^10.4.2",
+    "perfect-scrollbar": "^1.5.5",
     "postcss": "^8.4.7",
     "rc-slider": "^10.0.0-alpha.4",
     "react": "^17.0.2",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^17.0.2",
+    "react-perfect-scrollbar": "^1.5.8",
+    "react-scrollbar": "^0.5.6",
     "tailwindcss": "^3.0.23"
   },
   "devDependencies": {
