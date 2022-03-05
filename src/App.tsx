@@ -7,7 +7,7 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 function App() {
   const [password, setPassword] = useState<string>("redaxe")
   const [length, setLength] = useState(16)
-  const [fuckMyLife, setFuckMyLife] = useState(false)
+  const [isCopied, setCopied] = useState(false)
   const [lowercase, setLowercase] = useState(true)
   const [uppercase, setUppercase] = useState(true)
   const [numbers, setNumbers] = useState(true)
@@ -27,7 +27,9 @@ function App() {
   }
 
   const copy = () => {
-    navigator.clipboard.writeText(password)
+    navigator.clipboard.writeText(password);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   }
 
   useEffect(() => generate(), [
@@ -46,7 +48,7 @@ function App() {
         </div>
         <div className="h-full flex items-center justify-center mt-0.5 gap-4">
           <button onClick={copy}>
-            <Icon icon="eva:copy-outline" className="w-6 h-6" />
+            <Icon icon={isCopied ? "eva:checkmark-outline" : "eva:copy-outline"} className="w-6 h-6" />
           </button>
           <button onClick={generate}>
             <Icon icon="eva:refresh-outline" className="w-6 h-6" />
